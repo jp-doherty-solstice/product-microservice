@@ -10,14 +10,14 @@ public class ProductController {
     @Autowired
     ProductService productService;
 
-    @RequestMapping(value = "/product/{id}", method = RequestMethod.GET)
-    public String getProductNameFromId(@PathVariable Long id) {
-        System.out.println("HIT THE PRODUCT CONTROLLER");
-        System.out.println(id);
-        String name = productService.getNameFromId(id);
-        System.out.println("NAME:");
-        System.out.println(name);
-        return name;
+    @RequestMapping(value = "/product/{id}/name", method = RequestMethod.GET)
+    public String getName(@PathVariable Long id) {
+        return productService.getName(id);
+    }
+
+    @RequestMapping(value = "/product/{id}/price", method = RequestMethod.GET)
+    public Double getPrice(@PathVariable Long id) {
+        return productService.getPrice(id);
     }
 
 }

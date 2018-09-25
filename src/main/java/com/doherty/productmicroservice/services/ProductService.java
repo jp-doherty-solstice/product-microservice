@@ -10,8 +10,12 @@ public class ProductService {
     @Autowired
     ProductRepository productRepository;
 
-    public String getNameFromId(Long id) {
+    public String getName(Long id) {
         return productRepository.getOne(id).getName();
+    }
+
+    public Double getPrice(Long id) {
+        return productRepository.getOne(id).getPrice();
     }
 
 }
