@@ -1,0 +1,12 @@
+applications:
+- name: product-microservice
+  path: ./build/libs/product-microservice-0.0.1-SNAPSHOT.jar
+  disk_quota: 1G
+  instances: 1
+  memory: 1G
+  routes:
+  - route: product-microservice-responsible-elephant.cfapps.io
+  services:
+  - product-mysql
+  - service-registry
+  stack: cflinuxfs2
